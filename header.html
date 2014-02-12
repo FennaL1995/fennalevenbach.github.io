@@ -1,0 +1,126 @@
+<!DOCTYPE html ISO-8859-1>
+<?php 
+function clean_input($input) {
+  $input = trim($input);             // strip whitespace
+  $input = stripslashes($input);     // remove slashes
+  $input = htmlspecialchars($input); // escape HTML input
+  //TODO : mysql escape
+  return $input;
+ }
+ 
+		
+			
+			
+?>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="container.css">
+   		<title>onSpel Games</title>
+		<link rel="icon" type="image/png" href="icon.png">
+	</head>
+
+	<body>
+	
+		<div id="container">
+		<div id="banner">
+		
+		<a href="index.php"> <IMG src="logo.png" width="1024" height="200"/> </a>	
+		<ul>
+		<li id="gebruikersid" > <a href=
+		<?php
+			if(!isset($_SESSION))
+			{
+				session_start();
+			}
+			if (isset($_SESSION["Logged_In"]) == 1)
+			{
+				if ($_SESSION["Admin"] == 1)
+				{
+					echo "admin.php";
+				}
+			}
+		?>
+		>
+		<?php
+			if(!isset($_SESSION))
+			{
+				session_start();
+			}
+			if (isset($_SESSION["Logged_In"]) == 1)
+			{
+				if ($_SESSION["Admin"] == 1)
+				{
+					echo "admin";	
+				}
+			}
+		?>	
+		</a>
+		<a href=
+		<?php
+			if(!isset($_SESSION))
+			{
+				session_start();
+			}
+			if (isset($_SESSION["Logged_In"]) == 1)
+			{
+				echo "persoonlijk.php";
+			}
+		?>
+		>
+		<?php
+			if(!isset($_SESSION))
+			{
+				session_start();
+			}
+			if (isset($_SESSION["Logged_In"]) == 1)
+			{
+				echo $_SESSION["email"]; 
+				echo ', ';
+			} 
+		?>
+		</a>
+		<a href=
+		<?php
+			if(!isset($_SESSION))
+			{
+				session_start();
+			}
+			if (isset ($_SESSION["Logged_In"]) == 1) {
+				echo "index_logout.php";
+			} else {
+				echo "aanmelden.php";
+			}			
+		?>
+		>
+		<?php
+			if(!isset($_SESSION))
+			{
+				session_start();
+			}
+			if (isset ($_SESSION["Logged_In"]) == 1) {
+				echo "log out";
+			} else {
+				echo "log in";
+			}
+		?>	
+	</a></li></ul>
+		</div>		
+		<div id="menu">
+			<li id ="menu"><a href="index.php">Home</a></li>
+			<li id ="menu"><a href="ConsolesMenu.php">Consoles</a></li>
+			<li id ="menu"><a href="games.php">Games</a>
+				<ul>
+					<li id ="menu"><a href="games.php">All</a></li>
+					<li id ="menu"><a href="Xbox.php">Xbox One</a></li>
+					<li id ="menu"><a href="Ps4.php">Ps4</a></li>
+					<li id ="menu"><a href="Wii.php">Wii</a></li>
+					<li id ="menu"><a href="Pc.php">PC</a></li>				
+				</ul>
+			</li>
+			<li id ="menu"><a href="overons.php">Over ons</a></li>
+			<li id ="menu"><a href="mandje.php">Mandje</a></li>
+			<li id ="menu"><form action="zoek.php" name="zoek" method="get" style= "background-color: #272927;
+			padding-bottom: 10px; padding-left: 10px; padding-right: 9px; padding-top: 15px;"/>
+			<input type="text" name="zoek" style="width: 100px;"/>
+			<input type="submit" value="zoek"/></form></li>
+		</div>

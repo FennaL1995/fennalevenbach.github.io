@@ -1,0 +1,57 @@
+div#hele {
+font-family:"Comic Sans MS";
+}
+div#menu li {
+	display: block;
+	position: relative;
+	float: left;
+	z-index: 100;
+}
+
+ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+li#menu ul {
+	display: none;
+}
+
+div#menu li a {
+	display: block;
+	width:220px;
+	font-weight:bold;
+	font-style: arial; 
+	font-size: 1.5em;
+	color: #FF00C9;
+	background-color: black;
+	text-align:center;
+	padding:12px;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+div#menu li a:hover {
+	background: pink;
+}
+li#menu:hover ul {
+	display: block;
+	position: absolute;
+}
+#space {
+	width:1024px;
+	margin:auto;
+	padding: 0;
+}
+#achtergrond { 
+	width:1024px;
+}
+#table {
+background: pink; 
+}
+#table2{
+background: white; 
+float: right; 
+}
+#h1 { 
+float: center;
+} 
